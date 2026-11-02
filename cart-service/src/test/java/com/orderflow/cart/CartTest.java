@@ -1,0 +1,1 @@
+package com.orderflow.cart;import org.junit.jupiter.api.Test;import java.math.BigDecimal;import java.util.UUID;import static org.junit.jupiter.api.Assertions.*;class CartTest{@Test void lineTotalsUseDecimal(){var i=new ItemView(UUID.randomUUID(),"x",new BigDecimal("2.50"),3,new BigDecimal("7.50"));assertEquals("7.50",i.lineTotal().toPlainString());}}

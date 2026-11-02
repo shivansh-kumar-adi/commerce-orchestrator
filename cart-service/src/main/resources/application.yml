@@ -1,0 +1,3 @@
+server: {port: 8083, shutdown: graceful}
+spring: {application: {name: cart-service}, datasource: {url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/orderflow}", username: "${SPRING_DATASOURCE_USERNAME:orderflow}", password: "${SPRING_DATASOURCE_PASSWORD:orderflow}"}, jpa: {hibernate: {ddl-auto: validate}, properties: {hibernate: {default_schema: cart}}}, flyway: {schemas: cart, default-schema: cart}, data.redis: {host: "${SPRING_DATA_REDIS_HOST:localhost}"}, cache.redis.time-to-live: 1800000}
+management.endpoints.web.exposure.include: health,info

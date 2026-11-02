@@ -1,0 +1,8 @@
+server: {port: 8081, shutdown: graceful}
+spring:
+  application: {name: auth-service}
+  datasource: {url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/orderflow}", username: "${SPRING_DATASOURCE_USERNAME:orderflow}", password: "${SPRING_DATASOURCE_PASSWORD:orderflow}"}
+  jpa: {hibernate: {ddl-auto: validate}, properties: {hibernate: {default_schema: auth}}}
+  flyway: {schemas: auth, default-schema: auth}
+management.endpoints.web.exposure.include: health,info
+jwt: {secret: "${JWT_SECRET:development-only-secret-change-me-123456}", access-minutes: 15, refresh-days: 7}

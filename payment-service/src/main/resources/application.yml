@@ -1,0 +1,4 @@
+server: {port: 8086, shutdown: graceful}
+spring: {application: {name: payment-service}, datasource: {url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/orderflow}", username: "${SPRING_DATASOURCE_USERNAME:orderflow}", password: "${SPRING_DATASOURCE_PASSWORD:orderflow}"}, jpa: {hibernate: {ddl-auto: validate}, properties: {hibernate: {default_schema: payment}}}, flyway: {schemas: payment, default-schema: payment}, rabbitmq: {host: "${SPRING_RABBITMQ_HOST:localhost}", listener.simple: {default-requeue-rejected: false, retry: {enabled: true, max-attempts: 3}}}}
+payment.failure-rate: "${PAYMENT_FAILURE_RATE:0.10}"
+management.endpoints.web.exposure.include: health,info

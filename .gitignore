@@ -1,0 +1,17 @@
+node_modules/
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+.env
+.env.*
+dist/
+build/
+.next/
+*.class
+*.jar
+target/
+.gradle/
+.DS_Store
+Thumbs.db

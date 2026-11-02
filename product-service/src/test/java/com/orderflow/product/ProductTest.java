@@ -1,0 +1,1 @@
+package com.orderflow.product;import org.junit.jupiter.api.Test;import java.math.BigDecimal;import java.util.UUID;import static org.junit.jupiter.api.Assertions.*;class ProductTest{@Test void requestCarriesMoneyPrecisely(){var r=new ProductRequest("SKU","Name","D",new BigDecimal("19.99"),UUID.randomUUID(),true);assertEquals("19.99",r.price().toPlainString());}}
